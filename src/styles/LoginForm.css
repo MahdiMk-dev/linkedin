@@ -3,17 +3,10 @@
 .login-container {
   display: flex;
   justify-content: center;
-  align-items: center;
   height: 100vh;
 }
 
-.login-form {
-  width: 300px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-}
+
 
 .login-heading {
   text-align: center;
@@ -30,10 +23,11 @@
 }
 
 .form-input {
-  width: 100%;
-  padding: 10px;
+  max-width: 270px;
+  padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  margin-right: 10px;
 }
 
 .btn-submit {
@@ -62,4 +56,26 @@
 
 .signup-anchor:hover {
   text-decoration: underline;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  max-width: 50px;
+  max-height: 50px;
+}
+h2 {
+  color: blue;
+}
+.headtext{
+  padding: 25px;
+  color: #b24020;
+  font-size: xx-large;
+}
+.login-form {
+  min-width: 300px;
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
 }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/signup.css';
+
 function Signup() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-   const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-const [type, setType] = useState('individual');
+  const [type, setType] = useState('individual');
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -15,16 +16,15 @@ const [type, setType] = useState('individual');
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password,email,name ,type})
+        body: JSON.stringify({ username, password, email, name, type })
       });
       const data = await response.json();
       if (data.success) {
-        // Handle successful login (e.g., redirect to dashboard)
         console.log(data.message);
-        window.location.href="/login"
+        window.location.href = "/login"; // Redirect to login page upon successful signup
       } else {
-        // Handle login failure (e.g., display error message)
         console.log(data.message);
+        // Handle signup failure (e.g., display error message)
       }
     } catch (error) {
       console.error('Error:', error);
@@ -32,10 +32,13 @@ const [type, setType] = useState('individual');
   };
 
   return (
-  	<div className="signup-container">
+    <div className='signup'>
+      <div>
+      <p className='headertext'>Make the most of your professional life</p>
+      </div>
+    <div className="signup-container">
       <form onSubmit={handleSignup} className="signup-form">
         <h2 className="signup-heading">Signup</h2>
-
         <div className="form-group">
           <label htmlFor="name" className="form-label">Name</label>
           <input
@@ -47,7 +50,6 @@ const [type, setType] = useState('individual');
             required
           />
         </div>
-
         <div className="form-group">
           <label htmlFor="email" className="form-label">Email</label>
           <input
@@ -81,16 +83,19 @@ const [type, setType] = useState('individual');
             required
           />
         </div>
-         <div className="form-group">
-        <select  className="form-input" value={type} onChange={(e) => setType(e.target.value)}>
-          <option value="individual">Individual</option>
-          <option value="company">Company</option>
-        </select>
+        <div className="form-group">
+          <select className="form-input" value={type} onChange={(e) => setType(e.target.value)}>
+            <option value="individual">Individual</option>
+            <option value="company">Company</option>
+          </select>
         </div>
         <button type="submit" className="btn-submit">Signup</button>
-      </form>
-      </div>
+        <p>Already on LinkedIn?  <span className='bleu'><a href='login'>Signin</a></span>  </p>
 
+      </form>
+
+    </div>
+    </div>
   );
 }
 

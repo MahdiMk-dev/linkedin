@@ -20,7 +20,7 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost/linkedin/linkedin/backend/dd_post.php', {
+      const response = await fetch('http://localhost/linkedin/linkedin/backend/add_post.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

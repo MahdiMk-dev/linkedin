@@ -1,4 +1,7 @@
 <?php
+
+header("Access-Control-Allow-Origin: http://localhost:3000");
+
 header('Content-Type: application/json');
 include 'db_config.php';
 
