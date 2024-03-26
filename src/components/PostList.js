@@ -44,10 +44,12 @@ useEffect(() => {
       <h2>Posts</h2>
       <div className="post-form">
         <h3>Add New Post</h3>
-        <form onSubmit={handleSubmit}>
-          <textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder="Enter content"></textarea>
+        <div className='add_post'>
+        <form  onSubmit={handleSubmit}>
+          <textarea className='insert' value={content} onChange={(e) => setContent(e.target.value)} placeholder="Enter content"></textarea>
           <button type="submit">Add Post</button>
         </form>
+        </div>
       </div>
       
         {posts.map(post => (
