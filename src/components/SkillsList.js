@@ -8,7 +8,6 @@ const SkillsList = ({ skills }) => {
         <ul>
           {skills.map((exp, index) => (
             <li key={index}>
-              <p>ID: {exp.id}</p>
               <p>Name: {exp.skill_name}</p>
               <p>Proficiency: {exp.proficiency}</p>
             </li>

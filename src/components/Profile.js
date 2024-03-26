@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import "../styles/profile.css"
 import ExperienceForm from './ExperienceForm';
 import SkillsForm from './SkillsForm';
 import EducationForm from './EducationForm';
@@ -97,7 +98,54 @@ const userId = localStorage.getItem("loginId");
 console.log(profileData)
   return (
     <div>
-      {profileData && (
+      <nav className="navbar">
+      <div className="navbar-container">
+        <a href="#" className="navbar-logo">
+          LinkedIn
+        </a>
+        <div className="search-bar">
+          <input type="text" placeholder="Search..." />
+          <button className="search-button">Search</button>
+        </div>
+        <ul className="nav-menu">
+          <li className="nav-item">
+            <a href="/" className="nav-links">
+              Home
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-links">
+              My Network
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-links">
+              Jobs
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-links">
+              Messaging
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-links">
+              Notifications
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="#" className="nav-links">
+              Me
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div className='info'>
+      <section className="profile-page">
+        <div className="profile-section">
+          <div className="profile-header">
+          {profileData && (
         <div>
           <h2>{profileData.username}</h2>
           {/* Display other user information */}
@@ -123,6 +171,15 @@ console.log(profileData)
 
         </div>
       )}
+          </div>
+          <div className="profile-buttons">
+          </div>
+        </div>
+      </section>
+      </div>
+
+
+
     </div>
   );
 };

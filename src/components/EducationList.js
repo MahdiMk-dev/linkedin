@@ -8,7 +8,6 @@ const EducationList = ({ education }) => {
         <ul>
           {education.map((exp, index) => (
             <li key={index}>
-              <p>ID: {exp.id}</p>
               <p>Degree: {exp.degree}</p>
               <p>Institution: {exp.institution}</p>
               <p>Field: {exp.field_of_study}</p>

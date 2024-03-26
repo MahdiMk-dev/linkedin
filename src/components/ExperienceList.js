@@ -8,7 +8,6 @@ const ExperienceList = ({ experience }) => {
         <ul>
           {experience.map((exp, index) => (
             <li key={index}>
-              <p>ID: {exp.id}</p>
               <p>Company: {exp.company}</p>
               <p>Position: {exp.position}</p>
               <p>Start Date: {exp.start_date}</p>
