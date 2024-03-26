@@ -19,7 +19,7 @@ if (isset($data['username']) && isset($data['password'])) {
         // Verify password
         if (password_verify($password, $row['password'])) {
             // Authentication successful
-            echo json_encode(array('success' => true, 'message' => 'Login successful'));
+            echo json_encode(array('success' => true, 'message' => 'Login successful','userId'=>$row["user_id"]));
         } else {
             // Invalid password
             echo json_encode(array('success' => false, 'message' => 'Invalid username or password'));

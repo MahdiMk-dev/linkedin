@@ -20,12 +20,12 @@ const PostForm = () => {
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder="Enter content"></textarea>
-      <button type="submit">Add Post</button>
-    </form>
-  );
+return (
+  <form onSubmit={handleSubmit}>
+    <textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder="Enter content"></textarea>
+       <button type="submit">Add Post </button>
+  </form>
+);
 };
 
 export default PostForm;

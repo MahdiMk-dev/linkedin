@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/LoginForm.css';
+import logo from '../logo2.png'
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -17,10 +18,13 @@ function Login() {
       });
       const data = await response.json();
       if (data.success) {
-        // Handle successful login (e.g., redirect to dashboard)
-        window.location.href = "/home"; // Redirect upon successful login
+        const loginId = data.userId // Replace this with the actual login ID
+
+          // Set the login ID to local storage
+          localStorage.setItem("loginId", loginId);
+        window.location.href = "/profile"; // Redirect upon successful login
       } else {
-        // Handle login failure (e.g., display error message)
+        // Handle login failure ( display error message)
         alert(data.message);
       }
     } catch (error) {
@@ -30,6 +34,7 @@ function Login() {
 
   return (
     <div>
+            <img src={logo} alt="logo" /> {/* Use the imported image */}
 
       <div className="headtext">
         <p>Welcome to your</p>

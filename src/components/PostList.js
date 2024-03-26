@@ -3,6 +3,7 @@ import '../styles/ListPosts.css';
 const PostList = () => {
   const [posts, setPosts] = useState([]);
   const [content, setContent] = useState('');
+  const userId = localStorage.getItem("loginId");
   const fetchPosts = async () => {
       try {
         const response = await fetch('http://localhost/linkedin/linkedin/backend/get_posts.php');
@@ -20,12 +21,12 @@ useEffect(() => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost/linkedin/linkedin/backend/add_post.php', {
+      const response = await fetch(`http://localhost/linkedin/linkedin/backend/add_post.php?userId=${userId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({  content })
+        body: JSON.stringify({  content,userId })
       });
       const data = await response.json();
       alert(data.message);
@@ -52,6 +53,7 @@ useEffect(() => {
         {posts.map(post => (
           <div className="card-container">
           <div key={post.id} className="card">
+          <a href={`./View_Profile/${post.user_id}`}>{post.name}</a>
             <p>{post.content}</p>
           </div>
            </div>
